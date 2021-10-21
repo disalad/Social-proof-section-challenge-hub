@@ -61,6 +61,7 @@ main .ratings {
   grid-template-rows: repeat(3, 1fr);
   place-items: center;
   grid-gap: 1em;
+  position: relative;
 }
 main .ratings .rating-item {
   background-color: #f7f2f7;
@@ -173,28 +174,25 @@ main .reviews {
   main .ratings {
     grid-gap: 0;
     justify-items: baseline;
-    min-width: 0;
-    min-height: 0;
   }
   main .ratings .rating-item {
-    margin: 0 0 0 calc(12.5% * (var(--order) - 1));
     flex-direction: row;
     justify-content: unset;
-    max-width: 26rem;
+    max-width: 25rem;
     padding: 1.5em 1em;
     padding-left: 2em;
+    position: absolute;
+    top: calc((var(--order) - 1) * 20%);
+    right: calc((var(--negative-order) - 1) * 15%);
   }
   main .ratings .rating-item h3 {
-    margin: 0 1.5em;
-  }
-  main .ratings .rating-one {
-    margin-top: 1em;
+    margin: 0 1.25em;
   }
   main .ratings .rating-two {
-    margin-top: 3.5em;
+    top: 50%;
   }
   main .ratings .rating-three {
-    margin-top: 3.5em;
+    top: 100%;
   }
   main .title,
 main .ratings,
@@ -223,15 +221,6 @@ main .reviews {
   }
   main .title p {
     width: 40ch;
-  }
-  main .ratings .rating-item {
-    margin: 0 calc(12.5% * (var(--negative-order) - 1)) 0 0;
-  }
-  main .ratings .rating-two {
-    margin-top: 3em;
-  }
-  main .ratings .rating-three {
-    margin-top: 3em;
   }
   main .reviews .review-item {
     width: 22rem;

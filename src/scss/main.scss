@@ -67,6 +67,7 @@ main {
     grid-template-rows: repeat(3, 1fr);
     place-items: center;
     grid-gap: 1em;
+    position: relative;
 
     .rating-item {
       background-color: var.$light-grayish-magneta;
@@ -208,32 +209,29 @@ main {
     .ratings {
       grid-gap: 0;
       justify-items: baseline;
-      min-width: 0;
-      min-height: 0;
 
       .rating-item {
-        margin: 0 0 0 calc(12.5% * calc(var(--order) - 1));
+        // margin: 0 0 0 calc(12.5% * calc(var(--order) - 1));
         flex-direction: row;
         justify-content: unset;
-        max-width: 26rem;
+        max-width: 25rem;
         padding: 1.5em 1em;
         padding-left: 2em;
+        position: absolute;
+        top: calc((var(--order) - 1) * 20%);
+        right: calc((var(--negative-order) - 1) * 15%);
 
         h3 {
-          margin: 0 1.5em;
+          margin: 0 1.25em;
         }
       }
 
-      .rating-one {
-        margin-top: 1em;
-      }
-
       .rating-two {
-        margin-top: 3.5em;
+        top: 50%;
       }
 
       .rating-three {
-        margin-top: 3.5em;
+        top: 100%;
       }
     }
 
@@ -270,20 +268,6 @@ main {
     .title {
       p {
         width: 40ch;
-      }
-    }
-
-    .ratings {
-      .rating-item {
-        margin: 0 calc(12.5% * calc(var(--negative-order) - 1)) 0 0;
-      }
-
-      .rating-two {
-        margin-top: 3em;
-      }
-
-      .rating-three {
-        margin-top: 3em;
       }
     }
 
